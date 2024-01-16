@@ -1,5 +1,5 @@
-using CrossCuting;
 using Domain;
+using CrossCuting;
 
 var builder = WebApplication.CreateBuilder(args);
 

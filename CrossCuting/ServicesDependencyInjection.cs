@@ -7,7 +7,6 @@ using Infrastructure.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -18,7 +17,7 @@ namespace CrossCuting
 {
     public static class ServicesDependencyInjection
     {
-        private const string applicationProjectName = "Applications";
+        private const string applicationProjectName = "Application";
 
 
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
@@ -79,6 +78,7 @@ namespace CrossCuting
                 .WithTransientLifetime());
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.Load(applicationProjectName)));
+
         }
     }
 }

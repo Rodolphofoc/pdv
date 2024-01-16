@@ -1,8 +1,5 @@
-﻿using Api.ModelView;
-using Applications.Auth.Queries;
-using Applications.Metrics.Queries;
+﻿using Applications.Metrics.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -29,6 +26,7 @@ namespace Api.Controllers
             var query = new MetricsSalesQuery();
 
             return Ok(await _mediator.Send(query));
+
         }
     }
 }
